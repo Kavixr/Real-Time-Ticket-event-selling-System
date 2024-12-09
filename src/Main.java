@@ -180,7 +180,6 @@ public class Main {
             threads.add(ven_thread);
         }
 
-
         for (Customer customer : customer_list) {
             Thread cus_thread = new Thread(customer);
             cus_thread.start();
