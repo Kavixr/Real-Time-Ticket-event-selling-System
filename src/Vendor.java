@@ -13,11 +13,12 @@ public class Vendor implements Runnable{
         this.ticket_Pool = ticketPool;
     }
 
+    @Override
     public void run() {
         while (true) {
             try {
                 for (int i = 0; i < Tickets_per_Release; i++) {
-                    Thread.sleep(Release_interval);
+                    Thread.sleep(1000 * Release_interval);
                     TicketInfo Vendor_ticket = new TicketInfo(Vendor_Name);
                     ticket_Pool.addTicket_Info(Vendor_Name, Vendor_ticket);
                 }

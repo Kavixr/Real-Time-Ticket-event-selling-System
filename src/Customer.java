@@ -13,10 +13,12 @@ public class Customer implements Runnable{
         this.Retrieval_interval = Retrieval_interval;
         this.ticketPool = ticketPool;
     }
+
+    @Override
     public void run() {
         while (true) {
             try{
-                Thread.sleep(Retrieval_interval);
+                Thread.sleep(1000 * Retrieval_interval);
                 TicketInfo Customer_Ticket = new TicketInfo(Customer_Name);
                 ticketPool.RemoveTicket_Info(Customer_Name,Customer_Ticket);
 
@@ -28,6 +30,9 @@ public class Customer implements Runnable{
 
             }
         }
+    }
+    public void Stop() {
+
     }
 
 }
